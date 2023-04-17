@@ -16,6 +16,37 @@ Acceuil::Acceuil(int width, int height, string title, string s1, string s2, stri
         	// Si le chargement de la police échoue, affiche une erreur et quitte le programme
         	std::cerr << "Erreur : impossible de charger la police Microsoft Jhenghei !" << std::endl;
     	}
+    	
+    	if (!this->texture.loadFromFile("ultrasonbg.png")){
+        	// Si le chargement de l'image échoue, affiche une erreur et quitte le programme
+        	std::cerr << "Erreur : impossible de charger l'image Capteur Ultrason !" << std::endl;
+    	}
+    	
+    	if (!this->texture2.loadFromFile("haptiquebg.png")){
+        	// Si le chargement de l'image échoue, affiche une erreur et quitte le programme
+        	std::cerr << "Erreur : impossible de charger l'image Capteur Haptique !" << std::endl;
+    	}
+    	
+    	if (!this->texture3.loadFromFile("bazookabg.png")){
+        	// Si le chargement de l'image échoue, affiche une erreur et quitte le programme
+        	std::cerr << "Erreur : impossible de charger l'image Bazooka !" << std::endl;
+    	}
+    	
+    	if (!this->texture4.loadFromFile("mitrailleusebg.png")){
+        	// Si le chargement de l'image échoue, affiche une erreur et quitte le programme
+        	std::cerr << "Erreur : impossible de charger l'image Mitrailleuse !" << std::endl;
+    	}
+    	
+    	if (!this->texture5.loadFromFile("manettebg.png")){
+        	// Si le chargement de l'image échoue, affiche une erreur et quitte le programme
+        	std::cerr << "Erreur : impossible de charger les touches directionnelles !" << std::endl;
+    	}
+    	
+    	if (!this->texture6.loadFromFile("manettebg.png")){
+        	// Si le chargement de l'image échoue, affiche une erreur et quitte le programme
+        	std::cerr << "Erreur : impossible de charger les touches directionnelles !" << std::endl;
+    	}
+    	
     	this->text.setString(title);
     	this->text.setFont(this->font);
     	this->text.setCharacterSize(64);
@@ -42,15 +73,13 @@ Acceuil::Acceuil(int width, int height, string title, string s1, string s2, stri
 Acceuil::~Acceuil(){}
 
 void Acceuil::load_shapes(){
-
-
     	this->text.setFillColor(this->color); // Définit la couleur du texte comme bleue
     	this->text.setPosition(790.f, 50.f);
     
   
 	this->rect.setFillColor(sf::Color::Blue); // Remplit la couleur en bleu
     	this->rect.setPosition(410.f, 200.f); // Mettre la position à 410 pixels horizontal et 200 pixels vertical
-    	this->rect.setOutlineThickness(10.f);
+    	this->rect.setOutlineThickness(30.f);
 	this->rect.setOutlineColor(Color::Blue);
 	
 
@@ -84,6 +113,30 @@ void Acceuil::load_shapes(){
     	
     	this->textarme.setFillColor(color); 
     	this->textarme.setPosition(1155.f, 400.f);
+    	
+    	this->sprite.setTexture(this->texture);
+    	this->sprite.setPosition(sf::Vector2f(510.f, 500.f)); 
+	this->sprite.setScale(sf::Vector2f(0.3f, 0.3f));
+	
+	this->sprite2.setTexture(this->texture2);
+    	this->sprite2.setPosition(sf::Vector2f(520.f, 700.f)); 
+	this->sprite2.setScale(sf::Vector2f(0.4f, 0.4f));
+	
+	this->sprite3.setTexture(this->texture3);
+    	this->sprite3.setPosition(sf::Vector2f(1100.f, 500.f)); 
+	this->sprite3.setScale(sf::Vector2f(0.5f, 0.5f));
+	
+	this->sprite4.setTexture(this->texture4);
+    	this->sprite4.setPosition(sf::Vector2f(1125.f, 700.f)); 
+	this->sprite4.setScale(sf::Vector2f(0.4f, 0.4f));
+	
+	this->sprite5.setTexture(this->texture5);
+    	this->sprite5.setPosition(sf::Vector2f(1220.f, 185.f)); 
+	this->sprite5.setScale(sf::Vector2f(0.25f, 0.25f));
+	
+	this->sprite6.setTexture(this->texture6);
+    	this->sprite6.setPosition(sf::Vector2f(475.f, 185.f)); 
+	this->sprite6.setScale(sf::Vector2f(0.25f, 0.25f));
 }
 
 void Acceuil::load_game(){
@@ -110,7 +163,7 @@ void Acceuil::load_game(){
 				
 			}
 		}
-		window.clear();
+		this->window.clear();
 		// On dessine les différents éléments
 		this->window.draw(this->text);
 		this->window.draw(this->rect);
@@ -121,6 +174,12 @@ void Acceuil::load_game(){
 		this->window.draw(this->border2);
 		this->window.draw(this->textcap);
 		this->window.draw(this->textarme);
+		this->window.draw(this->sprite);
+		this->window.draw(this->sprite2);
+		this->window.draw(this->sprite3);
+		this->window.draw(this->sprite4);
+		this->window.draw(this->sprite5);
+		this->window.draw(this->sprite6);
 		// On affiche
 		window.display();
 	}

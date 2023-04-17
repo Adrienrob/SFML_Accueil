@@ -28,6 +28,18 @@ class Acceuil{
 		RectangleShape border2;
 		Text textcap;
 		Text textarme;
+		Texture texture;
+		Texture texture2;
+		Sprite sprite;
+		Sprite sprite2;
+		Texture texture3;
+		Texture texture4;
+		Sprite sprite3;
+		Sprite sprite4;
+		Texture texture5;
+		Sprite sprite5;
+		Texture texture6;
+		Sprite sprite6;
 };
 
 #endif
