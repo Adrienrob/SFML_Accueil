@@ -40,6 +40,18 @@ class Acceuil{
 		Sprite sprite5;
 		Texture texture6;
 		Sprite sprite6;
+		RectangleShape cap1;
+		RectangleShape cap2;
+		RectangleShape cap3;
+		RectangleShape cap4;
+		Text textcap1;
+		Text textcap2;
+		Text textcap3;
+		Text textcap4;
+		Text prendre;
+		Text prendre2;
+		Text pret;
+		Text pret2;
 };
 
 #endif

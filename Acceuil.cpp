@@ -68,6 +68,41 @@ Acceuil::Acceuil(int width, int height, string title, string s1, string s2, stri
     	this->rectarme.setSize(Vector2f(300.f, 500.f));
     	this->border.setSize(Vector2f(rectcapteur.getSize().x + 20.f, rectcapteur.getSize().y + 20.f));
     	this->border2.setSize(Vector2f(rectarme.getSize().x + 20.f, rectarme.getSize().y + 20.f));
+    	
+    	
+    	this->textcap1.setString("Ultrason");
+    	this->textcap1.setFont(this->font);
+    	this->textcap1.setCharacterSize(32);
+    	
+    	
+    	this->textcap2.setString("Haptique");
+    	this->textcap2.setFont(this->font);
+    	this->textcap2.setCharacterSize(32);
+    	
+    	
+    	this->textcap3.setString("Bazooka");
+    	this->textcap3.setFont(this->font);
+    	this->textcap3.setCharacterSize(32);
+    	
+    	this->textcap4.setString("Mitrailleuse");
+    	this->textcap4.setFont(this->font);
+    	this->textcap4.setCharacterSize(32);
+    	
+    	this->prendre.setString("Prendre ?");
+    	this->prendre.setFont(this->font);
+    	this->prendre.setCharacterSize(40);
+    	
+    	this->prendre2.setString("Prendre ?");
+    	this->prendre2.setFont(this->font);
+    	this->prendre2.setCharacterSize(40);
+    	
+    	this->pret.setString("Pret ?");
+    	this->pret.setFont(this->font);
+    	this->pret.setCharacterSize(40);
+    	
+    	this->pret2.setString("Pret ?");
+    	this->pret2.setFont(this->font);
+    	this->pret2.setCharacterSize(40);
 }
 
 Acceuil::~Acceuil(){}
@@ -107,6 +142,7 @@ void Acceuil::load_shapes(){
    	this->border2.setOutlineColor(Color::Blue); // Couleur de bordure bleue
     	this->border2.setOutlineThickness(10.f); // Epaisseur de la bordure de 10 pixels
     	this->border2.setPosition(rectarme.getPosition() - sf::Vector2f(10.f, 10.f)); // Définit la position de la bordure autour du rectangle
+    
     	
     	this->textcap.setFillColor(color);
     	this->textcap.setPosition(505.f, 400.f);
@@ -119,7 +155,7 @@ void Acceuil::load_shapes(){
 	this->sprite.setScale(sf::Vector2f(0.3f, 0.3f));
 	
 	this->sprite2.setTexture(this->texture2);
-    	this->sprite2.setPosition(sf::Vector2f(520.f, 700.f)); 
+    	this->sprite2.setPosition(sf::Vector2f(500.f, 700.f)); 
 	this->sprite2.setScale(sf::Vector2f(0.4f, 0.4f));
 	
 	this->sprite3.setTexture(this->texture3);
@@ -137,6 +173,70 @@ void Acceuil::load_shapes(){
 	this->sprite6.setTexture(this->texture6);
     	this->sprite6.setPosition(sf::Vector2f(475.f, 185.f)); 
 	this->sprite6.setScale(sf::Vector2f(0.25f, 0.25f));
+	
+	sf::FloatRect spriteBounds = this->sprite.getGlobalBounds();
+	
+	this->cap1.setSize(Vector2f(spriteBounds.width + 20.f, spriteBounds.height + 20.f));
+	this->cap1.setFillColor(Color::Transparent); 
+   	this->cap1.setOutlineColor(Color::Red); 
+    	this->cap1.setOutlineThickness(10.f); 
+    	this->cap1.setPosition(this->sprite.getPosition() - sf::Vector2f(10.f, 10.f));
+    	
+    	
+    	sf::FloatRect spriteBounds2 = this->sprite2.getGlobalBounds();
+	
+	this->cap2.setSize(Vector2f(spriteBounds2.width + 20.f, spriteBounds2.height + 20.f));
+	this->cap2.setFillColor(Color::Transparent); 
+   	this->cap2.setOutlineColor(Color::Red); 
+    	this->cap2.setOutlineThickness(10.f); 
+    	this->cap2.setPosition(this->sprite2.getPosition() - sf::Vector2f(10.f, 10.f));
+    	
+    	
+    	
+    	sf::FloatRect spriteBounds3 = this->sprite3.getGlobalBounds();
+	
+	this->cap3.setSize(Vector2f(spriteBounds3.width + 20.f, spriteBounds3.height + 20.f));
+	this->cap3.setFillColor(Color::Transparent); 
+   	this->cap3.setOutlineColor(Color::Red); 
+    	this->cap3.setOutlineThickness(10.f); 
+    	this->cap3.setPosition(this->sprite3.getPosition() - sf::Vector2f(10.f, 10.f));
+    	
+    	
+    	
+    	sf::FloatRect spriteBounds4 = this->sprite4.getGlobalBounds();
+	
+	this->cap4.setSize(Vector2f(spriteBounds4.width + 20.f, spriteBounds4.height + 20.f));
+	this->cap4.setFillColor(Color::Transparent); 
+   	this->cap4.setOutlineColor(Color::Red); 
+    	this->cap4.setOutlineThickness(10.f); 
+    	this->cap4.setPosition(this->sprite4.getPosition() - sf::Vector2f(10.f, 10.f));
+    	
+    	
+    	this->textcap1.setFillColor(color);
+    	this->textcap1.setPosition(this->sprite.getPosition() + sf::Vector2f(30.f, 10.f));
+    	
+    	this->textcap2.setFillColor(color);
+    	this->textcap2.setPosition(this->sprite2.getPosition() + sf::Vector2f(25.f, 30.f));
+    	
+    	this->textcap3.setFillColor(color);
+    	this->textcap3.setPosition(this->sprite3.getPosition() + sf::Vector2f(50.f, 0.f));
+    	
+    	this->textcap4.setFillColor(color);
+    	this->textcap4.setPosition(this->sprite4.getPosition() + sf::Vector2f(20.f, 10.f));
+    	
+    	this->prendre.setFillColor(color);
+    	this->prendre.setPosition(this->sprite.getPosition() + sf::Vector2f(10.f, 40.f));
+    	
+    	this->pret.setFillColor(color);
+    	this->pret.setPosition(this->sprite3.getPosition() + sf::Vector2f(55.f, 20.f));
+    	
+    	this->prendre2.setFillColor(color);
+    	this->prendre2.setPosition(this->sprite2.getPosition() + sf::Vector2f(10.f, 60.f));
+    	
+    	this->pret2.setFillColor(color);
+    	this->pret2.setPosition(this->sprite4.getPosition() + sf::Vector2f(10.f, 40.f));
+    	
+    	
 }
 
 void Acceuil::load_game(){
@@ -163,6 +263,40 @@ void Acceuil::load_game(){
 				
 			}
 		}
+		sf::Vector2i mousePos = sf::Mouse::getPosition(this->window);
+		
+		if(this->cap1.getGlobalBounds().contains(sf::Vector2f(mousePos))){
+			this->cap1.setFillColor(sf::Color::White);
+		}
+		
+		else{
+			this->cap1.setFillColor(sf::Color::Transparent);
+		}
+		
+		if(this->cap2.getGlobalBounds().contains(sf::Vector2f(mousePos))){
+			this->cap2.setFillColor(sf::Color::White);
+		}
+		
+		else{
+			this->cap2.setFillColor(sf::Color::Transparent);
+		}
+		
+		if(this->cap3.getGlobalBounds().contains(sf::Vector2f(mousePos))){
+			this->cap3.setFillColor(sf::Color::White);
+		}
+		
+		else{
+			this->cap3.setFillColor(sf::Color::Transparent);
+		}
+		
+		if(this->cap4.getGlobalBounds().contains(sf::Vector2f(mousePos))){
+			this->cap4.setFillColor(sf::Color::White);
+		}
+		
+		else{
+			this->cap4.setFillColor(sf::Color::Transparent);
+		}
+		
 		this->window.clear();
 		// On dessine les différents éléments
 		this->window.draw(this->text);
@@ -180,6 +314,32 @@ void Acceuil::load_game(){
 		this->window.draw(this->sprite4);
 		this->window.draw(this->sprite5);
 		this->window.draw(this->sprite6);
+		this->window.draw(this->cap1);
+		this->window.draw(this->cap2);
+		this->window.draw(this->cap3);
+		this->window.draw(this->cap4);
+		
+		if(this->cap1.getGlobalBounds().contains(sf::Vector2f(mousePos))){
+			this->window.draw(this->textcap1);
+			this->window.draw(this->prendre);
+		}
+		
+		if(this->cap2.getGlobalBounds().contains(sf::Vector2f(mousePos))){
+			this->window.draw(this->textcap2);
+			this->window.draw(this->prendre2);
+		}
+		
+		if(this->cap3.getGlobalBounds().contains(sf::Vector2f(mousePos))){
+			this->window.draw(this->textcap3);
+			this->window.draw(this->pret);
+		}
+		
+		if(this->cap4.getGlobalBounds().contains(sf::Vector2f(mousePos))){
+			this->window.draw(this->textcap4);
+			this->window.draw(this->pret2);
+		}
+		
+		
 		// On affiche
 		window.display();
 	}
