@@ -52,6 +52,8 @@ class Acceuil{
 		Text prendre2;
 		Text pret;
 		Text pret2;
+		// VertexArray croix1;
+		// VertexArray croix2;
 };
 
 #endif

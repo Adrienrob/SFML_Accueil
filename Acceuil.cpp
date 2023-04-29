@@ -103,6 +103,15 @@ Acceuil::Acceuil(int width, int height, string title, string s1, string s2, stri
     	this->pret2.setString("Pret ?");
     	this->pret2.setFont(this->font);
     	this->pret2.setCharacterSize(40);
+    	
+    	/*
+    	this->croix1.resize(4);
+    	this->croix1.setPrimitiveType(sf::Lines);
+    	
+    	this->croix2.resize(4);
+    	this->croix2.setPrimitiveType(sf::Lines);
+	*/
+
 }
 
 Acceuil::~Acceuil(){}
@@ -213,7 +222,7 @@ void Acceuil::load_shapes(){
     	
     	
     	this->textcap1.setFillColor(color);
-    	this->textcap1.setPosition(this->sprite.getPosition() + sf::Vector2f(30.f, 10.f));
+    	this->textcap1.setPosition(this->sprite.getPosition() + sf::Vector2f(25.f, 10.f));
     	
     	this->textcap2.setFillColor(color);
     	this->textcap2.setPosition(this->sprite2.getPosition() + sf::Vector2f(25.f, 30.f));
@@ -222,24 +231,49 @@ void Acceuil::load_shapes(){
     	this->textcap3.setPosition(this->sprite3.getPosition() + sf::Vector2f(50.f, 0.f));
     	
     	this->textcap4.setFillColor(color);
-    	this->textcap4.setPosition(this->sprite4.getPosition() + sf::Vector2f(20.f, 10.f));
+    	this->textcap4.setPosition(this->sprite4.getPosition() + sf::Vector2f(5.f, 20.f));
     	
     	this->prendre.setFillColor(color);
-    	this->prendre.setPosition(this->sprite.getPosition() + sf::Vector2f(10.f, 40.f));
+    	this->prendre.setPosition(this->sprite.getPosition() + sf::Vector2f(5.f, 40.f));
     	
     	this->pret.setFillColor(color);
-    	this->pret.setPosition(this->sprite3.getPosition() + sf::Vector2f(55.f, 20.f));
+    	this->pret.setPosition(this->sprite3.getPosition() + sf::Vector2f(60.f, 30.f));
     	
     	this->prendre2.setFillColor(color);
     	this->prendre2.setPosition(this->sprite2.getPosition() + sf::Vector2f(10.f, 60.f));
     	
     	this->pret2.setFillColor(color);
-    	this->pret2.setPosition(this->sprite4.getPosition() + sf::Vector2f(10.f, 40.f));
+    	this->pret2.setPosition(this->sprite4.getPosition() + sf::Vector2f(40.f, 50.f));
     	
+    	/*
+	this->croix1[0].position = sf::Vector2f(100.f, 100.f);
+	this->croix1[1].position = sf::Vector2f(300.f, 200.f);
+	this->croix1[2].position = sf::Vector2f(100.f, 200.f);
+	this->croix1[3].position = sf::Vector2f(300.f, 100.f);
+	
+	
+	this->croix1[0].color = sf::Color::Red;
+	this->croix1[1].color = sf::Color::Red;
+	this->croix1[2].color = sf::Color::Red;
+	this->croix1[3].color = sf::Color::Red;
+	
+	
+	this->croix2[0].position = sf::Vector2f(100.f, 100.f);
+	this->croix2[1].position = sf::Vector2f(300.f, 200.f);
+	this->croix2[2].position = sf::Vector2f(100.f, 200.f);
+	this->croix2[3].position = sf::Vector2f(300.f, 100.f);
+	
+	
+	this->croix2[0].color = sf::Color::Red;
+	this->croix2[1].color = sf::Color::Red;
+	this->croix2[2].color = sf::Color::Red;
+	this->croix2[3].color = sf::Color::Red;
+    	*/
     	
 }
 
 void Acceuil::load_game(){
+	int choix_cap=0,choix_arme=0;
 	while(this->window.isOpen()){
 		Event event;
 		while(this->window.pollEvent(event)){
@@ -322,21 +356,53 @@ void Acceuil::load_game(){
 		if(this->cap1.getGlobalBounds().contains(sf::Vector2f(mousePos))){
 			this->window.draw(this->textcap1);
 			this->window.draw(this->prendre);
+			if(sf::Mouse::isButtonPressed(sf::Mouse::Left)&&(choix_cap==0)){
+				this->cap1.setOutlineColor(Color::Green);
+				choix_cap++;
+			}
+			else if(sf::Mouse::isButtonPressed(sf::Mouse::Left)&&(choix_cap==1)){
+				this->cap1.setOutlineColor(Color::Red);
+				choix_cap=0;
+			}
 		}
 		
 		if(this->cap2.getGlobalBounds().contains(sf::Vector2f(mousePos))){
 			this->window.draw(this->textcap2);
 			this->window.draw(this->prendre2);
+			if(sf::Mouse::isButtonPressed(sf::Mouse::Left)&&(choix_cap==0)){
+				this->cap2.setOutlineColor(Color::Green);
+				choix_cap++;
+			}
+			else if(sf::Mouse::isButtonPressed(sf::Mouse::Left)&&(choix_cap==1)){
+				this->cap2.setOutlineColor(Color::Red);
+				choix_cap=0;
+			}
 		}
 		
 		if(this->cap3.getGlobalBounds().contains(sf::Vector2f(mousePos))){
 			this->window.draw(this->textcap3);
 			this->window.draw(this->pret);
+			if(sf::Mouse::isButtonPressed(sf::Mouse::Left)&&(choix_arme==0)){
+				this->cap3.setOutlineColor(Color::Green);
+				choix_arme++;
+			}
+			else if(sf::Mouse::isButtonPressed(sf::Mouse::Left)&&(choix_arme==1)){
+				this->cap3.setOutlineColor(Color::Red);
+				choix_arme=0;
+			}
 		}
 		
 		if(this->cap4.getGlobalBounds().contains(sf::Vector2f(mousePos))){
 			this->window.draw(this->textcap4);
 			this->window.draw(this->pret2);
+			if(sf::Mouse::isButtonPressed(sf::Mouse::Left)&&(choix_arme==0)){
+				this->cap4.setOutlineColor(Color::Green);
+				choix_arme++;
+			}
+			else if(sf::Mouse::isButtonPressed(sf::Mouse::Left)&&(choix_arme==1)){
+				this->cap4.setOutlineColor(Color::Red);
+				choix_arme=0;
+			}
 		}
 		
 		
