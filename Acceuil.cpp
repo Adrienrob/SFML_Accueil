@@ -111,7 +111,97 @@ Acceuil::Acceuil(int width, int height, string title, string s1, string s2, stri
     	this->croix2.resize(4);
     	this->croix2.setPrimitiveType(sf::Lines);
 	*/
-
+	
+	this->rectcap1.setSize(Vector2f(300.f, 200.f));
+	this->bordertab1.setSize(Vector2f(rectcap1.getSize().x + 20.f, rectcap1.getSize().y + 20.f));
+	
+	this->rectcap2.setSize(Vector2f(300.f, 200.f));
+	this->bordertab2.setSize(Vector2f(rectcap2.getSize().x + 20.f, rectcap2.getSize().y + 20.f));
+	
+	this->rectcap3.setSize(Vector2f(300.f, 200.f));
+	this->bordertab3.setSize(Vector2f(rectcap3.getSize().x + 20.f, rectcap3.getSize().y + 20.f));
+	
+	this->rectcap4.setSize(Vector2f(300.f, 200.f));
+	this->bordertab4.setSize(Vector2f(rectcap4.getSize().x + 20.f, rectcap4.getSize().y + 20.f));
+	
+	this->titre1.setString("Ultrason Avantages");
+    	this->titre1.setFont(this->font2);
+    	this->titre1.setCharacterSize(26);
+    	
+    	this->titre2.setString("Haptique Avantages");
+    	this->titre2.setFont(this->font2);
+    	this->titre2.setCharacterSize(26);
+    	
+    	this->titre3.setString("Bazooka Avantages");
+    	this->titre3.setFont(this->font2);
+    	this->titre3.setCharacterSize(26);
+    	
+    	this->titre4.setString("Mitrailleuse Avantages");
+    	this->titre4.setFont(this->font2);
+    	this->titre4.setCharacterSize(26);
+    	
+    	
+    	this->sstitre1.setString("Elargit le champ de");
+    	this->sstitre1.setFont(this->font);
+    	this->sstitre1.setCharacterSize(26);
+    	
+    	this->sstitres1.setString("vision du joueur");
+    	this->sstitres1.setFont(this->font);
+    	this->sstitres1.setCharacterSize(26);
+    	
+    	this->sstitre2.setString("Permet au joueur");
+    	this->sstitre2.setFont(this->font);
+    	this->sstitre2.setCharacterSize(26);
+    	
+    	this->sstitres2.setString("d'aller plus vite");
+    	this->sstitres2.setFont(this->font);
+    	this->sstitres2.setCharacterSize(26);
+    	
+    	this->sstitre3.setString("Tire des munitions lourdes");
+    	this->sstitre3.setFont(this->font);
+    	this->sstitre3.setCharacterSize(26);
+    	
+    	this->sstitres3.setString("sur la direction choisie");
+    	this->sstitres3.setFont(this->font);
+    	this->sstitres3.setCharacterSize(26);
+    	
+    	this->sstitre4.setString("Tire des munitions legeres");
+    	this->sstitre4.setFont(this->font);
+    	this->sstitre4.setCharacterSize(26);
+    	
+    	this->sstitres4.setString("dans toutes les directions");
+    	this->sstitres4.setFont(this->font);
+    	this->sstitres4.setCharacterSize(26);
+    	
+    	/*
+    	this->textcap1.setString("Ultrason");
+    	this->textcap1.setFont(this->font2);
+    	this->textcap1.setCharacterSize(32);
+    	
+    	this->textcap1.setString("Ultrason");
+    	this->textcap1.setFont(this->font2);
+    	this->textcap1.setCharacterSize(32);
+	*/
+	
+	this->circ1.setRadius(100.f);
+	this->circ1.setFillColor(sf::Color::Blue);
+    	this->circ1.setOutlineThickness(10.f);
+	this->circ1.setOutlineColor(sf::Color::Red);
+    	this->circ1.setPosition(810.f, 420.f);
+    	
+    	this->erase.setString("Erase");
+    	this->erase.setFont(this->font);
+    	this->erase.setCharacterSize(45);
+    	
+    	this->circ2.setRadius(100.f);
+	this->circ2.setFillColor(sf::Color::Blue);
+    	this->circ2.setOutlineThickness(10.f);
+	this->circ2.setOutlineColor(sf::Color::White);
+    	this->circ2.setPosition(810.f, 680.f);
+    	
+    	this->start.setString("Start");
+    	this->start.setFont(this->font);
+    	this->start.setCharacterSize(45);
 }
 
 Acceuil::~Acceuil(){}
@@ -187,7 +277,7 @@ void Acceuil::load_shapes(){
 	
 	this->cap1.setSize(Vector2f(spriteBounds.width + 20.f, spriteBounds.height + 20.f));
 	this->cap1.setFillColor(Color::Transparent); 
-   	this->cap1.setOutlineColor(Color::Red); 
+   	this->cap1.setOutlineColor(Color::Blue); 
     	this->cap1.setOutlineThickness(10.f); 
     	this->cap1.setPosition(this->sprite.getPosition() - sf::Vector2f(10.f, 10.f));
     	
@@ -196,7 +286,7 @@ void Acceuil::load_shapes(){
 	
 	this->cap2.setSize(Vector2f(spriteBounds2.width + 20.f, spriteBounds2.height + 20.f));
 	this->cap2.setFillColor(Color::Transparent); 
-   	this->cap2.setOutlineColor(Color::Red); 
+   	this->cap2.setOutlineColor(Color::Blue); 
     	this->cap2.setOutlineThickness(10.f); 
     	this->cap2.setPosition(this->sprite2.getPosition() - sf::Vector2f(10.f, 10.f));
     	
@@ -206,7 +296,7 @@ void Acceuil::load_shapes(){
 	
 	this->cap3.setSize(Vector2f(spriteBounds3.width + 20.f, spriteBounds3.height + 20.f));
 	this->cap3.setFillColor(Color::Transparent); 
-   	this->cap3.setOutlineColor(Color::Red); 
+   	this->cap3.setOutlineColor(Color::Blue); 
     	this->cap3.setOutlineThickness(10.f); 
     	this->cap3.setPosition(this->sprite3.getPosition() - sf::Vector2f(10.f, 10.f));
     	
@@ -216,7 +306,7 @@ void Acceuil::load_shapes(){
 	
 	this->cap4.setSize(Vector2f(spriteBounds4.width + 20.f, spriteBounds4.height + 20.f));
 	this->cap4.setFillColor(Color::Transparent); 
-   	this->cap4.setOutlineColor(Color::Red); 
+   	this->cap4.setOutlineColor(Color::Blue); 
     	this->cap4.setOutlineThickness(10.f); 
     	this->cap4.setPosition(this->sprite4.getPosition() - sf::Vector2f(10.f, 10.f));
     	
@@ -270,6 +360,91 @@ void Acceuil::load_shapes(){
 	this->croix2[3].color = sf::Color::Red;
     	*/
     	
+    	this->rectcap1.setFillColor(sf::Color::Black);
+    	this->rectcap1.setPosition(50.f, 420.f);
+    	this->rectcap1.setOutlineThickness(10.f);
+	this->rectcap1.setOutlineColor(Color::Black);
+	
+    	this->bordertab1.setFillColor(Color::Transparent); 
+   	this->bordertab1.setOutlineColor(Color::Blue); 
+    	this->bordertab1.setOutlineThickness(10.f); 
+    	this->bordertab1.setPosition(rectcap1.getPosition() - sf::Vector2f(10.f, 10.f)); 
+    	
+    	
+    	this->rectcap2.setFillColor(sf::Color::Black);
+    	this->rectcap2.setPosition(50.f, 700.f);
+    	this->rectcap2.setOutlineThickness(10.f);
+	this->rectcap2.setOutlineColor(Color::Black);
+	
+    	this->bordertab2.setFillColor(Color::Transparent); 
+   	this->bordertab2.setOutlineColor(Color::Blue); 
+    	this->bordertab2.setOutlineThickness(10.f); 
+    	this->bordertab2.setPosition(rectcap2.getPosition() - sf::Vector2f(10.f, 10.f)); 
+    	
+    	
+    	this->rectcap3.setFillColor(sf::Color::Black);
+    	this->rectcap3.setPosition(1500.f, 420.f);
+    	this->rectcap3.setOutlineThickness(10.f);
+	this->rectcap3.setOutlineColor(Color::Black);
+	
+    	this->bordertab3.setFillColor(Color::Transparent);
+   	this->bordertab3.setOutlineColor(Color::Blue); 
+    	this->bordertab3.setOutlineThickness(10.f); 
+    	this->bordertab3.setPosition(rectcap3.getPosition() - sf::Vector2f(10.f, 10.f)); 
+    	
+    	
+    	this->rectcap4.setFillColor(sf::Color::Black);
+    	this->rectcap4.setPosition(1500.f, 700.f);
+    	this->rectcap4.setOutlineThickness(10.f);
+	this->rectcap4.setOutlineColor(Color::Black);
+	
+    	this->bordertab4.setFillColor(Color::Transparent); 
+   	this->bordertab4.setOutlineColor(Color::Blue); 
+    	this->bordertab4.setOutlineThickness(10.f); 
+    	this->bordertab4.setPosition(rectcap4.getPosition() - sf::Vector2f(10.f, 10.f)); 
+    	
+    	this->titre1.setFillColor(Color::Blue);
+    	this->titre1.setPosition(90.f, 420.f);
+    	
+    	this->titre2.setFillColor(Color::Blue);
+    	this->titre2.setPosition(85.f, 700.f);
+    	
+    	this->titre3.setFillColor(Color::Blue);
+    	this->titre3.setPosition(1535.f, 420.f);
+    	
+    	this->titre4.setFillColor(Color::Blue);
+    	this->titre4.setPosition(1515.f, 700.f);
+    	
+    	
+    	this->sstitre1.setFillColor(Color::Blue);
+    	this->sstitre1.setPosition(90.f, 480.f);
+    	
+    	this->sstitres1.setFillColor(Color::Blue);
+    	this->sstitres1.setPosition(90.f, 520.f);
+    	
+    	this->sstitre2.setFillColor(Color::Blue);
+    	this->sstitre2.setPosition(85.f, 760.f);
+    	
+    	this->sstitres2.setFillColor(Color::Blue);
+    	this->sstitres2.setPosition(85.f, 800.f);
+    	
+    	this->sstitre3.setFillColor(Color::Blue);
+    	this->sstitre3.setPosition(1500.f, 480.f);
+    	
+    	this->sstitres3.setFillColor(Color::Blue);
+    	this->sstitres3.setPosition(1500.f, 520.f);
+    	
+    	this->sstitre4.setFillColor(Color::Blue);
+    	this->sstitre4.setPosition(1500.f, 760.f);
+    	
+    	this->sstitres4.setFillColor(Color::Blue);
+    	this->sstitres4.setPosition(1500.f, 800.f);
+    	
+    	this->erase.setFillColor(Color::Red);
+    	this->erase.setPosition(850.f, 490.f);
+    	
+    	this->start.setFillColor(Color::White);
+    	this->start.setPosition(850.f, 750.f);
 }
 
 void Acceuil::load_game(){
@@ -280,21 +455,6 @@ void Acceuil::load_game(){
 			// Si on clique sur la touche close de la fenêtre
 			if(event.type == Event::Closed){
 				window.close();
-			}
-			
-			// Si on appuye sur la touche espace
-			else if(event.type == Event::KeyPressed && event.key.code == Keyboard::Space){
-			
-				// On remplit les rectangles en blanc
-				this->rect.setFillColor(Color::White);
-				this->rect.setOutlineColor(Color::White);
-				
-				this->rectcapteur.setFillColor(Color::White);
-				this->rectcapteur.setOutlineColor(Color::White);
-				
-				this->rectarme.setFillColor(Color::White);
-				this->rectarme.setOutlineColor(Color::White);
-				
 			}
 		}
 		sf::Vector2i mousePos = sf::Mouse::getPosition(this->window);
@@ -332,6 +492,7 @@ void Acceuil::load_game(){
 		}
 		
 		this->window.clear();
+		
 		// On dessine les différents éléments
 		this->window.draw(this->text);
 		this->window.draw(this->rect);
@@ -352,56 +513,151 @@ void Acceuil::load_game(){
 		this->window.draw(this->cap2);
 		this->window.draw(this->cap3);
 		this->window.draw(this->cap4);
+		this->window.draw(this->circ1);
+		this->window.draw(this->erase);
+		this->window.draw(this->circ2);
+		this->window.draw(this->start);
+		
 		
 		if(this->cap1.getGlobalBounds().contains(sf::Vector2f(mousePos))){
 			this->window.draw(this->textcap1);
 			this->window.draw(this->prendre);
+			this->window.draw(this->rectcap1);
+			this->window.draw(this->bordertab1);
+			this->window.draw(this->titre1);
+			this->window.draw(this->sstitre1);
+			this->window.draw(this->sstitres1);
+			
 			if(sf::Mouse::isButtonPressed(sf::Mouse::Left)&&(choix_cap==0)){
 				this->cap1.setOutlineColor(Color::Green);
 				choix_cap++;
-			}
-			else if(sf::Mouse::isButtonPressed(sf::Mouse::Left)&&(choix_cap==1)){
-				this->cap1.setOutlineColor(Color::Red);
-				choix_cap=0;
+				
+				this->textcap1.setFillColor(Color::Green);
+				this->prendre.setFillColor(Color::Green);
+				
+				this->titre1.setFillColor(Color::Green);
+				this->bordertab1.setOutlineColor(Color::Green);
+				this->sstitre1.setFillColor(Color::Green);
+				this->sstitres1.setFillColor(Color::Green);
 			}
 		}
 		
 		if(this->cap2.getGlobalBounds().contains(sf::Vector2f(mousePos))){
 			this->window.draw(this->textcap2);
 			this->window.draw(this->prendre2);
+			this->window.draw(this->rectcap2);
+			this->window.draw(this->bordertab2);
+			this->window.draw(this->titre2);
+			this->window.draw(this->sstitre2);
+			this->window.draw(this->sstitres2);
+			
 			if(sf::Mouse::isButtonPressed(sf::Mouse::Left)&&(choix_cap==0)){
 				this->cap2.setOutlineColor(Color::Green);
 				choix_cap++;
-			}
-			else if(sf::Mouse::isButtonPressed(sf::Mouse::Left)&&(choix_cap==1)){
-				this->cap2.setOutlineColor(Color::Red);
-				choix_cap=0;
+				
+				this->textcap2.setFillColor(Color::Green);
+				this->prendre2.setFillColor(Color::Green);
+				
+				this->titre2.setFillColor(Color::Green);
+				this->bordertab2.setOutlineColor(Color::Green);
+				this->sstitre2.setFillColor(Color::Green);
+				this->sstitres2.setFillColor(Color::Green);
 			}
 		}
 		
 		if(this->cap3.getGlobalBounds().contains(sf::Vector2f(mousePos))){
 			this->window.draw(this->textcap3);
 			this->window.draw(this->pret);
+			this->window.draw(this->rectcap3);
+			this->window.draw(this->bordertab3);
+			this->window.draw(this->titre3);
+			this->window.draw(this->sstitre3);
+			this->window.draw(this->sstitres3);
+			
 			if(sf::Mouse::isButtonPressed(sf::Mouse::Left)&&(choix_arme==0)){
 				this->cap3.setOutlineColor(Color::Green);
 				choix_arme++;
-			}
-			else if(sf::Mouse::isButtonPressed(sf::Mouse::Left)&&(choix_arme==1)){
-				this->cap3.setOutlineColor(Color::Red);
-				choix_arme=0;
+				
+				this->textcap3.setFillColor(Color::Green);
+				this->pret.setFillColor(Color::Green);
+				
+				this->titre3.setFillColor(Color::Green);
+				this->bordertab3.setOutlineColor(Color::Green);
+				this->sstitre3.setFillColor(Color::Green);
+				this->sstitres3.setFillColor(Color::Green);
 			}
 		}
 		
 		if(this->cap4.getGlobalBounds().contains(sf::Vector2f(mousePos))){
 			this->window.draw(this->textcap4);
 			this->window.draw(this->pret2);
+			this->window.draw(this->rectcap4);
+			this->window.draw(this->bordertab4);
+			this->window.draw(this->titre4);
+			this->window.draw(this->sstitre4);
+			this->window.draw(this->sstitres4);
+				
 			if(sf::Mouse::isButtonPressed(sf::Mouse::Left)&&(choix_arme==0)){
 				this->cap4.setOutlineColor(Color::Green);
 				choix_arme++;
+				
+				this->textcap4.setFillColor(Color::Green);
+				this->pret2.setFillColor(Color::Green);
+				
+				this->titre4.setFillColor(Color::Green);
+				this->bordertab4.setOutlineColor(Color::Green);
+				this->sstitre4.setFillColor(Color::Green);
+				this->sstitres4.setFillColor(Color::Green);
 			}
-			else if(sf::Mouse::isButtonPressed(sf::Mouse::Left)&&(choix_arme==1)){
-				this->cap4.setOutlineColor(Color::Red);
+		}
+		
+		if(this->circ1.getGlobalBounds().contains(sf::Vector2f(mousePos))){
+			if(sf::Mouse::isButtonPressed(sf::Mouse::Left)){
+				
+				this->cap1.setOutlineColor(Color::Blue);
+				this->cap2.setOutlineColor(Color::Blue);
+				this->cap3.setOutlineColor(Color::Blue);
+				this->cap4.setOutlineColor(Color::Blue);
+				
+				this->textcap1.setFillColor(Color::Blue);
+				this->prendre.setFillColor(Color::Blue);
+				this->textcap2.setFillColor(Color::Blue);
+				this->prendre2.setFillColor(Color::Blue);
+				this->textcap3.setFillColor(Color::Blue);
+				this->pret.setFillColor(Color::Blue);
+				this->textcap4.setFillColor(Color::Blue);
+				this->pret2.setFillColor(Color::Blue);
+				
+				this->titre1.setFillColor(Color::Blue);
+				this->bordertab1.setOutlineColor(Color::Blue);
+				this->titre2.setFillColor(Color::Blue);
+				this->bordertab2.setOutlineColor(Color::Blue);
+				this->titre3.setFillColor(Color::Blue);
+				this->bordertab3.setOutlineColor(Color::Blue);
+				this->titre4.setFillColor(Color::Blue);
+				this->bordertab4.setOutlineColor(Color::Blue);
+				
+				this->sstitre1.setFillColor(Color::Blue);
+				this->sstitres1.setFillColor(Color::Blue);
+				this->sstitre2.setFillColor(Color::Blue);
+				this->sstitres2.setFillColor(Color::Blue);
+				this->sstitre3.setFillColor(Color::Blue);
+				this->sstitres3.setFillColor(Color::Blue);
+				this->sstitre4.setFillColor(Color::Blue);
+				this->sstitres4.setFillColor(Color::Blue);
+				
 				choix_arme=0;
+				choix_cap=0;
+			}
+		}
+		
+		if(this->circ2.getGlobalBounds().contains(sf::Vector2f(mousePos))){
+			if((sf::Mouse::isButtonPressed(sf::Mouse::Left))&&(choix_arme==1)&&(choix_cap==1)){
+				this->circ2.setOutlineColor(sf::Color::Green);
+				this->start.setFillColor(Color::Green);
+				choix_arme=2;
+				choix_cap=2;
+				// Lancement du jeu
 			}
 		}
 		
@@ -412,3 +668,25 @@ void Acceuil::load_game(){
 }
 
 
+/*
+else if(sf::Mouse::isButtonPressed(sf::Mouse::Left)&&(choix_cap==1)){
+				this->cap1.setOutlineColor(Color::Red);
+				choix_cap=0;
+			}
+			
+			else if(sf::Mouse::isButtonPressed(sf::Mouse::Left)&&(choix_cap==1)){
+				this->cap2.setOutlineColor(Color::Red);
+				choix_cap=0;
+			}
+			
+			else if(sf::Mouse::isButtonPressed(sf::Mouse::Left)&&(choix_arme==1)){
+				this->cap3.setOutlineColor(Color::Red);
+				choix_arme=0;
+			}
+			
+			else if(sf::Mouse::isButtonPressed(sf::Mouse::Left)&&(choix_arme==1)){
+				this->cap4.setOutlineColor(Color::Red);
+				choix_arme=0;
+			}
+
+*/
